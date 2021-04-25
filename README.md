@@ -1,13 +1,10 @@
-# AWare - (PoC)
+# AWare — C# Ransomware
 Ransomware with automatic Coinbase Commerce integration created in C# (Console) and PHP
 
 PD: AWare is just a proof of concept, with this, you can read the encryption and see how it is used, and thus prevent a real one.
 
 ## About
 Ransomware is a type of virus that prevents access to user files on their computer, encrypting them, until the user pays a ransom, in this case, $100, after payment, the program will automatically verify the status and decrypt the data of the user, to later close the process.
-
-## Warning
-While this may be helpful for some, there are significant risks. AWare can be used for educational purposes only. Do not use it as ransomware or to do malicious actions! You could go to jail on obstruction of justice charges just for executing it, even if you are innocent.
 
 ## How does it work
 When the .EXE is opened, a request is sent to the PHP script, with a unique ID of the computer and the name, the server, creates a session, creates a password (with which the user's files will be encrypted) and a secret key with which it encrypts the password, sending it encrypted to the client, the program decrypts the encrypted password and encrypts the files on the computer, reading the bytes of the files and encrypting them, to later be saved with an .AWare extension, e.g, if you have a Image with the name cat.jpg, it will be encrypted and saved with the name cat.jpg.AWare, after that, you are redirected to a page with your session ID, the 'victim' clicks the 'Pay' button and a Coinbase order is generated, while the program sends requests to the server every 10 seconds looking for any payment made under that session, when the payment is completed, AWare will decrypt all the files with the '.AWare' extension and rename them, and your image cat.jpg.AWare, it will return to cat.jpg .
